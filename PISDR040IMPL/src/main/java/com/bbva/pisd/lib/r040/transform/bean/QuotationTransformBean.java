@@ -1,11 +1,13 @@
 package com.bbva.pisd.lib.r040.transform.bean;
 
+
 import com.bbva.rbvd.dto.participant.dao.QuotationCustomerDAO;
-import com.bbva.rbvd.dto.participant.dao.QuotationDAO;
 import com.bbva.rbvd.dto.participant.dao.QuotationModDAO;
+import com.bbva.rbvd.dto.participant.dao.QuotationDAO;
 import com.bbva.rbvd.dto.participant.dao.InsuranceProductDAO;
-import com.bbva.rbvd.dto.participant.utils.InsuranceProperties;
 import com.bbva.rbvd.dto.participant.dao.InsuranceBusinessDAO;
+import com.bbva.rbvd.dto.participant.dao.InsuranceCompanyDAO;
+import com.bbva.rbvd.dto.participant.utils.InsuranceProperties;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -18,6 +20,7 @@ public class QuotationTransformBean {
         QuotationModDAO quotationModEntity = new QuotationModDAO();
         InsuranceProductDAO insuranceProductEntity = new InsuranceProductDAO();
         InsuranceBusinessDAO insuranceBusinessEntity = new InsuranceBusinessDAO();
+        InsuranceCompanyDAO insuranceCompanyDAO = new InsuranceCompanyDAO();
 
         quotationEntity.setInsuredCustomerName((String) mapQuotation.get(InsuranceProperties.FIELD_INSURED_CUSTOMER_NAME.getValue()));
         quotationEntity.setClientLasName((String) mapQuotation.get(InsuranceProperties.FIELD_CLIENT_LAST_NAME.getValue()));
@@ -31,10 +34,13 @@ public class QuotationTransformBean {
 
         insuranceBusinessEntity.setInsuranceBusinessName((String) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_BUSINESS_NAME.getValue()));
 
+        insuranceCompanyDAO.setInsuranceCompanyId((BigDecimal) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_COMPANY_ID.getValue()));
+
         quotationJoinInformation.setQuotation(quotationEntity);
         quotationJoinInformation.setQuotationMod(quotationModEntity);
         quotationJoinInformation.setInsuranceProduct(insuranceProductEntity);
         quotationJoinInformation.setInsuranceBusiness(insuranceBusinessEntity);
+        quotationJoinInformation.setInsuranceCompanyDAO(insuranceCompanyDAO);
         return quotationJoinInformation;
     }
 }
