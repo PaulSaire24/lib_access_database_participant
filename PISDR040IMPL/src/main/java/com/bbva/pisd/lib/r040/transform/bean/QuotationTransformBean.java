@@ -31,6 +31,7 @@ public class QuotationTransformBean {
         quotationModEntity.setInsuranceModalityType((String) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_MODALITY_TYPE.getValue()));
 
         insuranceProductEntity.setInsuranceProductType((String) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_PRODUCT_TYPE.getValue()));
+        insuranceProductEntity.setInsuranceProductId((BigDecimal) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_PRODUCT_ID.getValue()));
 
         insuranceBusinessEntity.setInsuranceBusinessName((String) mapQuotation.get(InsuranceProperties.FIELD_INSURANCE_BUSINESS_NAME.getValue()));
 
