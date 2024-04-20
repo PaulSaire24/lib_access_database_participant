@@ -10,7 +10,7 @@ public class QuotationLifeTransformBean {
     public static QuotationLifeDAO mapTransformParticipantQuotationLifeEntity(Map<String,Object> mapQuotation){
         QuotationLifeDAO participantQuotationLife = new QuotationLifeDAO();
         participantQuotationLife.setClientLastName((String) mapQuotation.get(InsuranceProperties.FIELD_CLIENT_LAST_NAME.getValue()));
-        participantQuotationLife.setCustomerBirthDate((String) mapQuotation.get(InsuranceProperties.FIELD_CUSTOMER_BIRTH_DATE.getValue()));
+        participantQuotationLife.setCustomerBirthDate(String.valueOf(mapQuotation.get(InsuranceProperties.FIELD_CUSTOMER_BIRTH_DATE.getValue())));
         participantQuotationLife.setInsuredCustomerName((String) mapQuotation.get(InsuranceProperties.FIELD_INSURED_CUSTOMER_NAME.getValue()));
         participantQuotationLife.setCustomerDocumentType((String) mapQuotation.get(InsuranceProperties.FIELD_CUSTOMER_DOCUMENT_TYPE.getValue()));
         participantQuotationLife.setPersonalId((String) mapQuotation.get(InsuranceProperties.FIELD_PERSONAL_ID.getValue()));
